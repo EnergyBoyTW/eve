@@ -8,3 +8,4 @@ node_modules
 .next
 .output
 apps/eve/next-env.d.ts
+coverage/
