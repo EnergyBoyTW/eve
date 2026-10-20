@@ -1,5 +1,9 @@
 # eveclaw
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Node.js](https://img.shields.io/badge/node-24.x-brightgreen.svg)](https://nodejs.org)
+[![GitHub](https://img.shields.io/badge/GitHub-EnergyBoyTW-181717?logo=github)](https://github.com/EnergyBoyTW)
+
 A personal AI assistant ("Eve") — proactive, always-on, and reachable from the web or Telegram — plus a **builder** that deploys configured copies into anyone's Vercel account in one click. Built on the [eve framework](https://eve.dev) with a Next.js chat UI (Cloudflare Kumo, base-ui, shadcn) and the builder styled with Whop's [Frosted UI](https://github.com/whopio/frosted-ui). Turborepo monorepo: the agent app lives in `apps/eve`, the agent builder in `apps/builder`.
 
 ## What it does
