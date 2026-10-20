@@ -10,7 +10,7 @@ function telegramChatId(attributes: Record<string, unknown>): string | null {
 
 export default defineTool({
   description:
-    "Create an event trigger: a webhook URL that wakes you when an external service POSTs to it (deploy failed, form submitted, payment received, email rule matched). You receive the payload, follow the stored instruction, and message Micky. Give him the returned URL to paste into the service.",
+    "Create an event trigger: a webhook URL that wakes you when an external service POSTs to it (deploy failed, form submitted, payment received, email rule matched). You receive the payload, follow the stored instruction, and message the owner. Give them the returned URL to paste into the service.",
   inputSchema: z.object({
     name: z
       .string()
@@ -22,7 +22,7 @@ export default defineTool({
       .min(1)
       .max(4000)
       .describe(
-        "Instruction to your future self when an event arrives: how to interpret the payload, what to check or do, and what to tell Micky. The fired session has no chat history, so include all context.",
+        "Instruction to your future self when an event arrives: how to interpret the payload, what to check or do, and what to tell the owner. The fired session has no chat history, so include all context.",
       ),
   }),
   async execute({ name, prompt }, ctx) {

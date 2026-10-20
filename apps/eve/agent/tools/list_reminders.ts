@@ -5,7 +5,7 @@ import { listReminders } from "../lib/reminders-db";
 
 export default defineTool({
   description:
-    "List active reminders and recurring scheduled tasks: id, prompt, next fire time, and cadence. Use when Micky asks what's scheduled, or to find an id to cancel.",
+    "List active reminders and recurring scheduled tasks: id, prompt, next fire time, and cadence. Use when the owner asks what's scheduled, or to find an id to cancel.",
   inputSchema: z.object({}),
   async execute() {
     const reminders = await listReminders();

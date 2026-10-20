@@ -17,7 +17,7 @@ import { useEffect, useState } from "react";
 import { AGENT_NAME } from "@/lib/identity";
 import { cn } from "@/lib/utils";
 
-// Management surface for everything Ruth does or knows on her own: scheduled
+// Management surface for everything the agent does or knows on its own: scheduled
 // reminders, event-trigger webhooks, long-term memory, connected apps, and
 // saved skills. Reminders/webhooks/memory stay read + delete (creation is
 // conversational); connections can be added/removed here because that's an

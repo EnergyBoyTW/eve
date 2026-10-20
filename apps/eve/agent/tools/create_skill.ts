@@ -17,7 +17,7 @@ export default defineTool({
       .min(1)
       .max(300)
       .describe(
-        "Routing hint written as the task that should trigger this skill, e.g. 'Use when Micky asks for his weekly review.'",
+        "Routing hint written as the task that should trigger this skill, e.g. 'Use when the owner asks for their weekly review.'",
       ),
     markdown: z
       .string()

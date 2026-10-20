@@ -7,7 +7,7 @@
 import { get } from "@vercel/blob";
 
 const API_BASE = "https://api.supermemory.ai";
-const CONTAINER_TAG = "micky";
+const CONTAINER_TAG = process.env.SUPERMEMORY_CONTAINER_TAG ?? "eve-agent";
 const BLOB_PATH = "memory/memories.json";
 
 interface LegacyMemory {
@@ -47,9 +47,7 @@ async function main(): Promise<void> {
   await api("/v3/settings", "PATCH", {
     shouldLLMFilter: true,
     filterPrompt:
-      "Personal assistant memory for a single user, Micky (Michael Shimeles). " +
-      "The containerTag is 'micky'. We store durable facts, preferences, routines, " +
-      "people, and project context about Micky. Ignore secrets and one-time codes.",
+      `Personal assistant memory for a single user. The containerTag is '${CONTAINER_TAG}'. We store durable facts, preferences, routines, people, and project context about the owner. Ignore secrets and one-time codes.`,
   });
 
   const legacy = await readLegacyMemories();
