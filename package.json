@@ -1,5 +1,6 @@
 {
   "name": "eveclaw",
+  "description": "Personal AI assistant with web chat, Telegram, proactive reminders, and an agent builder.",
   "version": "0.0.0",
   "private": true,
   "packageManager": "npm@11.16.0",
