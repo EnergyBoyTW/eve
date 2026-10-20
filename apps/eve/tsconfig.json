@@ -32,7 +32,6 @@
   "include": [
     "next-env.d.ts",
     "agent/**/*.ts",
-    "evals/**/*.ts",
     "scripts/**/*.ts",
     "app/**/*.ts",
     "app/**/*.tsx",

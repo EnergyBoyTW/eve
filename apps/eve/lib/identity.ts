@@ -9,5 +9,5 @@ function pick(value: string | undefined, fallback: string): string {
   return trimmed !== undefined && trimmed.length > 0 ? trimmed : fallback;
 }
 
-export const AGENT_NAME = pick(process.env.NEXT_PUBLIC_AGENT_NAME, "Ruth");
-export const OWNER_NAME = pick(process.env.NEXT_PUBLIC_OWNER_NAME, "Micky");
+export const AGENT_NAME = pick(process.env.NEXT_PUBLIC_AGENT_NAME, "Eve");
+export const OWNER_NAME = pick(process.env.NEXT_PUBLIC_OWNER_NAME, "you");

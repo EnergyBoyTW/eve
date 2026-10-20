@@ -1,6 +1,6 @@
 # eveclaw
 
-A personal AI assistant ("Eve") in the spirit of OpenClaw — proactive, always-on, and reachable from the web or Telegram — plus a **builder** that deploys configured copies of her into anyone's Vercel account in one click. Built on the durable [eve framework](https://eve.dev) with a Next.js chat UI styled with Whop's [Frosted UI](https://github.com/whopio/frosted-ui) design system. Turborepo monorepo: the agent app lives in `apps/eve`, the agent builder in `apps/builder`.
+A personal AI assistant ("Eve") — proactive, always-on, and reachable from the web or Telegram — plus a **builder** that deploys configured copies into anyone's Vercel account in one click. Built on the [eve framework](https://eve.dev) with a Next.js chat UI (Cloudflare Kumo, base-ui, shadcn) and the builder styled with Whop's [Frosted UI](https://github.com/whopio/frosted-ui). Turborepo monorepo: the agent app lives in `apps/eve`, the agent builder in `apps/builder`.
 
 ## What it does
 
@@ -42,7 +42,7 @@ A personal AI assistant ("Eve") in the spirit of OpenClaw — proactive, always-
 apps/eve/         # the agent app (also the builder's deploy template)
   agent/          # eve agent: channels, tools, skills, schedules, instructions
   app/            # Next.js web chat UI + API routes (threads, search, update-check, …)
-  components/     # UI components (Frosted UI design system)
+  components/     # UI components (Cloudflare Kumo + base-ui)
   lib/            # Neon-backed stores (threads, push), Composio connect, web auth
 apps/builder/     # the eveclaw agent builder
   app/            # create/update UI + API routes (deploy, update, template-version, …)
@@ -60,7 +60,7 @@ Requires Node 24.
 ```bash
 npm install
 cp apps/eve/.env.example apps/eve/.env.local   # then fill in values
-npm run dev   # turbo runs next dev for apps/eve on localhost:3000
+npm run dev   # starts apps/eve on :3000 and apps/builder on :3100
 ```
 
 `next dev` automatically boots the eve agent backend and proxies to it. Wait for `[eve:dev] server listening at ...` before chatting.
@@ -77,6 +77,11 @@ See [`apps/eve/.env.example`](apps/eve/.env.example) for the full annotated list
 | `BLOB_READ_WRITE_TOKEN` | File sharing + skill store |
 | `NEXT_PUBLIC_VAPID_PUBLIC_KEY`, `VAPID_PRIVATE_KEY` | Web push notifications |
 | `TELEGRAM_BOT_TOKEN`, `TELEGRAM_WEBHOOK_SECRET_TOKEN`, `TELEGRAM_ALLOWED_USER_IDS` | Telegram channel (optional) |
+| `NEXT_PUBLIC_AGENT_NAME` | Agent display name (defaults to "Eve") |
+| `NEXT_PUBLIC_OWNER_NAME`, `OWNER_NAME` | Owner display name (defaults to "you") |
+| `SUPERMEMORY_CONTAINER_TAG` | Isolates memories per deployment (defaults to "eve-agent") |
+| `TELEGRAM_BOT_USERNAME` | Bot username shown in Telegram profile |
+| `EVE_BUILDER_URL` | URL of the builder app, shown in the update banner |
 
 ## Scripts
 

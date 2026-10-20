@@ -3,8 +3,7 @@
   "version": "0.0.0",
   "type": "module",
   "imports": {
-    "#*": "./agent/*",
-    "#evals/*": "./evals/*"
+    "#*": "./agent/*"
   },
   "scripts": {
     "build": "next build",

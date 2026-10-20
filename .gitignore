@@ -7,3 +7,4 @@ node_modules
 .vercel
 .next
 .output
+apps/eve/next-env.d.ts

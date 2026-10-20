@@ -4,7 +4,7 @@
 import { swrCache } from "./swr-cache";
 
 const API_BASE = "https://api.supermemory.ai";
-const CONTAINER_TAG = "micky";
+const CONTAINER_TAG = process.env.SUPERMEMORY_CONTAINER_TAG ?? "eve-agent";
 
 export interface MemoryProfile {
   static: string[];

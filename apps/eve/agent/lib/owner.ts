@@ -10,10 +10,10 @@ function pick(value: string | undefined, fallback: string): string {
 
 /** The human this agent works for. */
 export function ownerName(): string {
-  return pick(process.env.OWNER_NAME ?? process.env.NEXT_PUBLIC_OWNER_NAME, "Micky");
+  return pick(process.env.OWNER_NAME ?? process.env.NEXT_PUBLIC_OWNER_NAME, "you");
 }
 
 /** The agent's own display name (push titles, tool copy). */
 export function agentName(): string {
-  return pick(process.env.NEXT_PUBLIC_AGENT_NAME, "Ruth");
+  return pick(process.env.NEXT_PUBLIC_AGENT_NAME, "Eve");
 }
